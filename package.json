@@ -32,6 +32,7 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "can": "^2.3.16",
     "can-connect": "^0.5.0",
     "can-zone": "^0.5.0",

@@ -3,13 +3,28 @@
     <title>{{title}}</title>
   </head>
   <body>
+    <can-import from="bootstrap/less/bootstrap.less!" />
     <can-import from="donejs-example/styles.less!" />
     <can-import from="donejs-example/app" export-as="viewModel" />
-		<can-import from="donejs-example/header.component"/>
+		<can-import from="donejs-example/header.component" />
+		<can-import from="donejs-example/loader.component" />
 
 		<site-header/>
 
-    <h1>{{message}}</h1>
+		<main>
+		{{#switch page}}
+			{{#case 'home'}}
+				<h1>Home</h1>
+			{{/case}}
+			{{#case 'about'}}
+			{{/case}}
+			{{#case 'simple-ajax'}}
+				<can-import from="donejs-example/simple-ajax/" can-tag="page-loader">
+					<simple-ajax/>
+				</can-import>
+			{{/case}}
+		{{/switch}}
+		</main>
 
     {{#switch env.NODE_ENV}}
       {{#case "production"}}

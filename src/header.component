@@ -29,6 +29,13 @@
 					'route': {
 						'page': "about"
 					}
+				},
+				{
+					'id': "simple-ajax",
+					'label': "Simple Ajax Call",
+					'route': {
+						'page': "simple-ajax"
+					}
 				}
 			])
     });
