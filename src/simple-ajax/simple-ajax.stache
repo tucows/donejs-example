@@ -1,1 +1,4 @@
-<p>{{message}}</p>
+<p>
+	{{#if stuff.isPending}}Loading..{{/if}}
+	{{#if stuff.isResolved}}{{stuff.value.message}}{{/if}}
+</p>
