@@ -5,6 +5,9 @@
   <body>
     <can-import from="donejs-example/styles.less!" />
     <can-import from="donejs-example/app" export-as="viewModel" />
+		<can-import from="donejs-example/header.component"/>
+
+		<site-header/>
 
     <h1>{{message}}</h1>
 

@@ -1,0 +1,36 @@
+<can-component tag="site-header">
+  <style type="less">
+    display: block;
+    
+    p { font-weight: bold; }
+  </style>
+  <template>
+		<can-import from="donejs-example/nav.component"/>
+		<header>
+			<header-nav {nav}=nav/>
+		</header>
+  </template>
+  <script type="view-model">
+    import Map from 'can/map/';
+    import List from 'can/list/';
+
+    export default Map.extend({
+			nav: new List([
+				{
+					'id': "home",
+					'label': "Home",
+					'route': {
+						'page': "home"
+					}
+				},
+				{
+					'id': "about",
+					'label': "About",
+					'route': {
+						'page': "about"
+					}
+				}
+			])
+    });
+  </script>
+</can-component>

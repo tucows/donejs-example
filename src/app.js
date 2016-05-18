@@ -3,6 +3,8 @@ import route from "can/route/";
 import 'can/map/define/';
 import 'can/route/pushstate/';
 
+route(':page', {page: 'home'});
+
 const AppViewModel = Map.extend({
   define: {
     message: {

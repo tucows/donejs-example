@@ -1,0 +1,21 @@
+<can-component tag="header-nav">
+  <style type="less">
+    display: block;
+    
+    p { font-weight: bold; }
+  </style>
+  <template>
+		<nav>
+			{{#each nav}}
+				<a id="{{id}}" href="{{routeUrl page=route.page}}">{{label}}</a>
+			{{/each}}
+		</nav>
+  </template>
+	<script type="events">
+    export default {
+			"nav div click": function (el, ev) {
+				console.log(el, ev);
+			}
+		};
+	</script>
+</can-component>
