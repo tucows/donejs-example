@@ -1,0 +1,5 @@
+<ul>
+	{{#myArray}}
+		<li>{{.}}</li>	
+	{{/myArray}}
+</ul>
