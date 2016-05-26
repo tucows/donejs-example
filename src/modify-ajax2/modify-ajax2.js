@@ -2,7 +2,6 @@
 import Component from 'can/component/';
 import Map from 'can/map/';
 import List from 'can/list/';
-import 'can/map/define/';
 import './modify-ajax2.less!';
 import template from './modify-ajax2.stache!';
 import Fixture from 'can/util/fixture/';
