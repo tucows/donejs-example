@@ -1,3 +1,4 @@
+"use strict";
 import Map from "can/map/";
 import route from "can/route/";
 import 'can/map/define/';

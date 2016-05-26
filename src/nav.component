@@ -12,6 +12,7 @@
 		</nav>
   </template>
 	<script type="events">
+		"use strict";
     export default {
 			"nav div click": function (el, ev) {
 				console.log(el, ev);

@@ -11,6 +11,7 @@
 		</header>
   </template>
   <script type="view-model">
+		"use strict";
     import Map from 'can/map/';
     import List from 'can/list/';
 
@@ -35,6 +36,13 @@
 					'label': "Simple Ajax Call",
 					'route': {
 						'page': "simple-ajax"
+					}
+				},
+				{
+					'id': "modify-ajax",
+					'label': "Modify Ajax Call",
+					'route': {
+						'page': "modify-ajax"
 					}
 				}
 			])

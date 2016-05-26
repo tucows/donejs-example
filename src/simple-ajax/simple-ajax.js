@@ -1,3 +1,4 @@
+"use strict";
 import Component from 'can/component/';
 import Map from 'can/map/';
 import 'can/map/define/';

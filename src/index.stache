@@ -23,6 +23,11 @@
 					<simple-ajax/>
 				</can-import>
 			{{/case}}
+			{{#case 'modify-ajax'}}
+				<can-import from="donejs-example/modify-ajax/" can-tag="page-loader">
+					<modify-ajax/>
+				</can-import>
+			{{/case}}
 		{{/switch}}
 		</main>
 
