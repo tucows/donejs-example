@@ -28,6 +28,7 @@ export default Component.extend({
 		can.ajax({
 			'url': '/api/simple-ajax',
 			success: function(response) {
+				response.myArray.push("modified");
 				this.viewModel.myArray.attr(response.myArray);
 			}.bind(this)
 		});
