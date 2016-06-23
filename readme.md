@@ -27,6 +27,11 @@ Development mode can be started with
 donejs develop
 ```
 
+This example project includes advanced server configuration via configs.
+`/bin/dev_startup.js` is called with donejs develop. This file takes one parameter `--no-live-reload`
+this uses a standard HTTP server.
+You need to have `commander` in your `package.json` `dev-dependancies` if you are building a new application from sratch. Then replace your `develop` line to use `./bin/dev_startup.js`
+
 ## Build and production mode
 
 To build the application into a production bundle run

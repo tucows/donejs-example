@@ -11,7 +11,7 @@
   "scripts": {
     "test": "testee src/test.html --browsers firefox --reporter Spec",
     "start": "done-serve --port 8080",
-    "develop": "done-serve --develop --port 8080",
+    "develop": "./bin/dev_startup.js --no-live-reload",
     "document": "documentjs",
     "build": "node build"
   },
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "can-fixture": "^0.1.2",
+    "commander": "^2.9.0",
     "documentjs": "^0.4.2",
     "donejs-cli": "^0.9.4",
     "donejs-deploy": "^0.4.0",

@@ -23,6 +23,10 @@ export default Component.extend({
 		this.getArray();
 	},
   template,
+	/**
+	 * @function getArray
+	 * @description performs the ajax call to get our array and modifies it. Then updates the live bound Map witht he modified data
+	 **/
 	getArray() {
 		can.ajax({
 			'url': '/api/simple-ajax',
