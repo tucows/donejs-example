@@ -7,7 +7,8 @@ var program = require('commander');
  */
 
 program.usage('[options]')
-	.option('-n, --no-live-reload', 'Disable the use of live reload and just use a normal HTTP server');
+	.option('-n, --no-live-reload', 'Disable the use of live reload and just use a normal HTTP server')
+	.parse(process.argv);
 
 /**
  * Gather local config, then spawn donejs development server
@@ -87,10 +88,13 @@ if (program.liveReload) {
 	);
 } else {
 	let http = require('http');
-	let devHTML = require('../development.html');
+	let fs = require('fs');
+	let devHTML = fs.readFileSync('development.html', 'utf8');
 	const handleRequest = function(request, response) {
 		response.end(devHTML);
 	}
 	let server = http.createServer(handleRequest);
-	server.listen(config['port']);
+	server.listen(config['port'], function() {
+		console.log("Server listening on port: %s", config['port']);						 
+	});
 }
