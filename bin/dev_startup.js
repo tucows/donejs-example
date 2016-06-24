@@ -87,14 +87,10 @@ if (program.liveReload) {
 		{stdio: 'inherit'}
 	);
 } else {
-	let http = require('http');
-	let fs = require('fs');
-	let devHTML = fs.readFileSync('development.html', 'utf8');
-	const handleRequest = function(request, response) {
-		response.end(devHTML);
-	}
-	let server = http.createServer(handleRequest);
-	server.listen(config['port'], function() {
+	process.env.live_reload_port = 0;
+	let connect = require('connect');
+	let serveStatic = require('serve-static');
+	connect().use(serveStatic('./')).listen(config['port'], function() {
 		console.log("Server listening on port: %s", config['port']);						 
 	});
 }
