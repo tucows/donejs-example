@@ -58,8 +58,6 @@ if (!config['live_reload_port'] && program.liveReload) {
 // run can server
 const child_process = require("child_process");
 
-
-console.log(program);
 if (program.liveReload) {
 	// set the live reload port for use in the UI
 	process.env.live_reload_port = config['live_reload_port'];
