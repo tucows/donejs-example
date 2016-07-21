@@ -1,20 +1,20 @@
 {
 	"ecmaVersions": 6,
 	"libs": [
-    "browser",
-    "jquery"
-  ],
-  "loadEagerly": [
-  ],
-  "plugins": {
+		"browser",
+		"jquery"
+	],
+	"loadEagerly": [
+	],
+	"plugins": {
 		"node": {
 		},
 		"modules": {
 		},
-    "es_modules": {
-    },
+		"es_modules": {
+		},
 		"doc_comment": {
 			"fullDocs": true
 		}
-  }
+	}
 }
