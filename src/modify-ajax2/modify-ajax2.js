@@ -10,7 +10,7 @@ export const ViewModel = Map.extend({
 	myArray: new List()
 });
 
-Fixture("GET /api/simple-ajax", function() {
+Fixture("GET /api/modify-ajax2", function() {
 	return {
 		myArray: [1,2,3,4,5]
 	}
@@ -29,7 +29,7 @@ export default Component.extend({
 	 **/
 	getArray() {
 		can.ajax({
-			'url': '/api/simple-ajax',
+			'url': '/api/modify-ajax2',
 			success: function(response) {
 				response.myArray.push("modified");
 				this.viewModel.myArray.attr(response.myArray);

@@ -1,14 +1,15 @@
 import F from 'funcunit';
-import QUnit from 'steal-qunit';
+import mocha from 'steal-mocha';
 
-F.attach(QUnit);
+F.attach(mocha);
 
-QUnit.module('donejs-example functional smoke test', {
-  beforeEach() {
+describe('donejs-example functional smoke test', function(){
+  beforeEach(function(){
     F.open('../development.html');
-  }
+  });
+
+  it('donejs-example main page shows up', function(){
+    F('title').text('donejs-example', 'Title is set');
+  });
 });
 
-QUnit.test('donejs-example main page shows up', function() {
-  F('title').text('donejs-example', 'Title is set');
-});

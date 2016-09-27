@@ -9,9 +9,9 @@
     "url": "http://tracer.ca"
   },
   "scripts": {
-    "test": "testee src/test.html --browsers firefox --reporter Spec",
+    "test": "testee src/test.html --browsers phantom --reporter Spec",
     "start": "done-serve --port 8080",
-    "develop": "./bin/dev_startup.js --no-live-reload",
+    "develop": "./bin/dev_startup.js",
     "document": "documentjs",
     "build": "node build"
   },
@@ -29,7 +29,10 @@
       "live-reload",
       "node_modules/can-zone/register"
     ],
-    "npmAlgorithm": "flat"
+    "npmAlgorithm": "flat",
+    "map": {
+      "chai": "chai/chai"
+    }
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -45,14 +48,18 @@
     "steal": "^0.16.0"
   },
   "devDependencies": {
-    "can-fixture": "^0.1.2",
+    "chai": "^3.5.0",
     "commander": "^2.9.0",
     "connect": "^3.4.1",
     "documentjs": "^0.4.2",
     "donejs-cli": "^0.9.4",
     "donejs-deploy": "^0.4.0",
     "funcunit": "~3.0.0",
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.3",
     "serve-static": "^1.11.1",
+    "sinon": "^1.17.6",
+    "steal-mocha": "0.0.3",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.16.0",
     "testee": "^0.2.4"

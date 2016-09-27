@@ -1,10 +1,26 @@
-import QUnit from 'steal-qunit';
-import { ViewModel } from './modify-ajax2';
+import 'steal-mocha';
+import { ViewModel, getArray} from './modify-ajax2';
 
-// ViewModel unit tests
-QUnit.module('donejs-example/modify-ajax2');
-
-QUnit.test('Has message', function(){
-  var vm = new ViewModel();
-  QUnit.equal(vm.attr('message'), 'This is the modify-ajax-2 component');
+/*
+ * Normally we would setup setup a Fixture for testing an API call
+ * However, since this entire project is a mock project, this fixture is already
+ * setup in the component
+import Fixture from 'can/util/fixture/';
+ 
+Fixture("GET /api/modify-ajax2", function() {
+  return {
+    myArray: [1,2,3,4,5]
+  }
 });
+ **/
+
+describe('donejs-example/modify-ajax2', function(){
+	it('getArray return ajax response', function(done){
+		return getArray().then(
+			function(response) {
+				response.myArray.should.equal([1,2,3,4,5]);
+				done();
+			}, done)
+	});
+});
+

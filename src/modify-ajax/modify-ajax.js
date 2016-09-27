@@ -7,7 +7,7 @@ import template from './modify-ajax.stache!';
 import Fixture from 'can/util/fixture/';
 
 const modifyAjax = function() {
-	const path = "/api/simple-ajax";
+	const path = "/api/modify-ajax";
 	var def = new can.Deferred();	
   can.ajax(path).then(
 		//success
@@ -33,7 +33,7 @@ export const ViewModel = Map.extend({
   }
 });
 
-Fixture("GET /api/simple-ajax", function() {
+Fixture("GET /api/modify-ajax", function() {
 	return {
 		message: "The simple ajax call returned this."
 	}
