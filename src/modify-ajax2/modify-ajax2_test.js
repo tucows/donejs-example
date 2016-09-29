@@ -1,5 +1,7 @@
 import 'steal-mocha';
-import { ViewModel, getArray} from './modify-ajax2';
+import ma2, { ViewModel } from './modify-ajax2';
+ 
+debugger;
 
 /*
  * Normally we would setup setup a Fixture for testing an API call
@@ -15,12 +17,12 @@ Fixture("GET /api/modify-ajax2", function() {
  **/
 
 describe('donejs-example/modify-ajax2', function(){
-	it('getArray return ajax response', function(done){
-		return getArray().then(
-			function(response) {
-				response.myArray.should.equal([1,2,3,4,5]);
-				done();
-			}, done)
+	it('ViewModel initializes myArray', function(){
+		var vm = new ViewModel();
+		return vm.attr("myArray").should.have.lengthOf(0);
+	});
+	it('getArray should get array and modify it', function(done) {
+		
 	});
 });
 

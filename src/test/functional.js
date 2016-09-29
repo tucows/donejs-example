@@ -11,5 +11,8 @@ describe('donejs-example functional smoke test', function(){
   it('donejs-example main page shows up', function(){
     F('title').text('donejs-example', 'Title is set');
   });
+	it('navigation gets rendered', function () {
+		F('header nav').exists();
+	});
 });
 
