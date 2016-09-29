@@ -7,22 +7,7 @@ import template from './modify-ajax2.stache!';
 import Fixture from 'can/util/fixture/';
 
 export const ViewModel = Map.extend({
-	myArray: new List()
-});
-
-Fixture("GET /api/modify-ajax2", function() {
-	return {
-		myArray: [1,2,3,4,5]
-	}
-});
-
-export default Component.extend({
-  tag: 'modify-ajax-2',
-  viewModel: ViewModel,
-	init() {
-		this.getArray();
-	},
-  template,
+	myArray: new List(),
 	/**
 	 * @function getArray
 	 * @description performs the ajax call to get our array and modifies it. Then updates the live bound Map witht he modified data
@@ -36,4 +21,19 @@ export default Component.extend({
 			}.bind(this)
 		});
 	}
+});
+
+Fixture("GET /api/modify-ajax2", function() {
+	return {
+		myArray: [1,2,3,4,5]
+	}
+});
+
+export default Component.extend({
+  tag: 'modify-ajax-2',
+  viewModel: ViewModel,
+	init() {
+		this.ViewModel.getArray();
+	},
+  template,
 });

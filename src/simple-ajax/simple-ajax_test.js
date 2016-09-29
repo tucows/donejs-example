@@ -17,9 +17,10 @@ Fixture("GET /api/simple-ajax", function() {
 
  **/
 
-describe('donejs-example/simple-ajax', function(){
+describe('donejs-example/simple-ajax component', function(){
 	it('should return ajax response', function(done){
 		var vm = new ViewModel();
+		// return vm.attr('stuff').should.eventually.equal("The simple ajax call returned this.");
 		return vm.attr('stuff').then(
 			function(response) {
 				response.message.should.equal("The simple ajax call returned this.");

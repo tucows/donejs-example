@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "testee src/test.html --browsers phantom --reporter Spec",
+    "test-debug": "DEBUG='testee:*' testee src/test.html --browsers phantom --reporter Spec",
     "start": "done-serve --port 8080",
     "develop": "./bin/dev_startup.js",
     "document": "documentjs",
@@ -54,6 +55,7 @@
     "documentjs": "^0.4.2",
     "donejs-cli": "^0.9.4",
     "donejs-deploy": "^0.4.0",
+    "donejs-mocha": "^0.1.0",
     "funcunit": "~3.0.0",
     "istanbul": "^0.4.5",
     "jshint": "^2.9.3",
