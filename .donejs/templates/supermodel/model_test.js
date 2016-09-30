@@ -1,4 +1,8 @@
+import 'steal-mocha'
 import <%= className %> from './<%= name %>';
+import chai from 'chai';
+
+chai.should();
 
 describe('models/<%= name %>', function() {
   it('getList', function(done){

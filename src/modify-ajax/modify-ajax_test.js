@@ -1,4 +1,8 @@
+import 'steal-mocha';
 import { ViewModel } from './modify-ajax';
+import chai from 'chai';
+
+chai.should();
 
 
 describe('donejs-example/modify-ajax', function(){
