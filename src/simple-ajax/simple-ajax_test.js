@@ -1,4 +1,3 @@
-import 'steal-mocha';
 import { ViewModel } from './simple-ajax';
 
 

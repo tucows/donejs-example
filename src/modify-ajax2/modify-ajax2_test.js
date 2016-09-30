@@ -1,4 +1,3 @@
-import 'steal-mocha';
 import ma2, { ViewModel } from './modify-ajax2';
  
 debugger;
