@@ -28,9 +28,9 @@
 					<modify-ajax/>
 				</can-import>
 			{{/case}}
-			{{#case 'modify-ajax2'}}
-				<can-import from="donejs-example/modify-ajax2/" can-tag="page-loader">
-					<modify-ajax-2/>
+			{{#case 'simple-form'}}
+				<can-import from="donejs-example/simple-form/" can-tag="page-loader">
+					<simple-form/>
 				</can-import>
 			{{/case}}
 		{{/switch}}

@@ -46,10 +46,10 @@
 					}
 				},
 				{
-					'id': "modify-ajax 2",
-					'label': "Modify Ajax Call 2",
+					'id': "simple-form",
+					'label': "Simple form with Ajax Submit",
 					'route': {
-						'page': "modify-ajax2"
+						'page': "simple-form"
 					}
 				}
 			])
