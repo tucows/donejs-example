@@ -33,6 +33,11 @@
 					<simple-form/>
 				</can-import>
 			{{/case}}
+			{{#case 'complex-ajax'}}
+				<can-import from="donejs-example/complex-ajax/" can-tag="page-loader">
+					<complex-ajax/>
+				</can-import>
+			{{/case}}
 		{{/switch}}
 		</main>
 

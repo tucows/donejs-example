@@ -1,0 +1,11 @@
+<p>Complex Ajax Response: {{#if stuff.isPending}}Loading..{{/if}}
+{{#if ./stuff.isResolved}}
+<ul>
+	{{#stuff.value}}
+		<li>	
+		{{./message}}
+		</li>
+	{{/stuff}}
+</ul>
+{{/if}}
+</p>

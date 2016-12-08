@@ -46,6 +46,13 @@
 					}
 				},
 				{
+					'id': "complex-ajax",
+					'label': "Complex Ajax Call",
+					'route': {
+						'page': "complex-ajax"
+					}
+				},
+				{
 					'id': "simple-form",
 					'label': "Simple form with Ajax Submit",
 					'route': {
