@@ -5,12 +5,12 @@
   "homepage": "https://github.com/tracer99/donejs-example",
   "author": {
     "name": "Paul Tichonczuk",
-    "email": "",
+    "email": "pault@tucows.com",
     "url": "http://tracer.ca"
   },
   "scripts": {
-    "test": "testee src/test.html --browsers chromium --reporter Spec",
-    "test-debug": "DEBUG='testee:*' testee src/test.html --browsers chromium --reporter Spec",
+    "test": "testee src/test.html --browsers phantom --reporter Spec",
+    "test-debug": "DEBUG='testee:*' testee src/test.html --browsers phantom --reporter Spec",
     "start": "done-serve --port 8080",
     "start_dev": "./bin/dev_startup.js --production",
     "develop": "./bin/dev_startup.js --development",
