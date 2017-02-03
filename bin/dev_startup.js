@@ -1,94 +1,105 @@
 #!/usr/bin/env node
 "use strict";
-var program = require('commander');
 
 /**
  * get command line params
  */
 
-program.usage('[options]')
-	.option('-n, --no-live-reload', 'Disable the use of live reload and just use a normal HTTP server')
-	.parse(process.argv);
+const commander = require("commander");
+const child_process = require("child_process");
 
-/**
- * Gather local config, then spawn donejs development server
- */
 
-const user = process.env.USER;
+const USERNAME = process.env.USER;
+const CONFIG_DEFAULT_FILE = "../config/dev.default.json";
+const CONFIG_USER_FILE = "../config/dev." + USERNAME + ".json";
+//console.log("dev_startup - [CONFIG_DEFAULT_FILE]=>[" + CONFIG_DEFAULT_FILE + "]; [CONFIG_DEFAULT_FILE]=>[" + CONFIG_DEFAULT_FILE + "]");
 
-const userConfig = '../config/dev.' + user + '.json';
-const defaultConfig = '../config/dev.default.json';
+commander.version("0.0.1")
+  .usage("[options]")
+  .description("start ting/done-serve in dev environment")
+  .option("-d, --development", "Enable development-mode (live-reload)")
+  .option("-p, --production", "Enable production-mode (compiled)")
+	.parse(process.argv)
+;
 
-var config;
+const isProduction = (commander.production) ? true : false;
 
+let config = {};
 // load default dev config
 try {
-	config = require(defaultConfig);
-} catch(e) {
+	config = require(CONFIG_DEFAULT_FILE);
+	//console.log({"dev_startup.config_default": config});
+} catch(ex) {
+	console.log({"dev_startup.config_default.ex": ex});
 	// ingored on purpose, we wanna check for both files
 }
 
-// load local dev config
+// load user dev config
 try {
-	config = require(userConfig);
-} catch(e) {
+	let config_user = require(CONFIG_USER_FILE);
+
+	// merge config from config_user
+	for (let key in config_user) {
+		config[key] = config_user[key];
+	}
+} catch(ex) {
 	// ingored on purpose, we wanna check for both files
 }
+
+let doneServeArgArray = [];	// done-serve command-arguments
+
+// insert into 'process.env' so that 'src/index.stache' has access as 'env'-hash
+process.env["HOST_NAME"] = "";	// set 'HOST_NAME' environment-variable to track node-instance
+process.env["NODE_ENV"] = "production";	// set 'NODE_ENV' environment-variable for dev-environment
+process.env["CLUSTER_NAME"] = "dev";	// set 'CLUSTER_NAME' environment-variable for dev-environment
+process.env["STATIC_SERVER"] = "";	// set 'STATIC_SERVER' environment-variable for dev-environment
+process.env["live_reload_port"] = "";	// set 'live_reload_port' environment-variable for dev-environment
 
 // config guard
-if (!config) {
-	console.error('Could not find a suitable config file.  ' +
-		'Make sure either ' + userConfig + ' or ' + defaultConfig + ' are available'
-	);
+if (! config) {
+	console.error("Could not find a suitable config file. " + "Make sure either " + CONFIG_USER_FILE + " or " + CONFIG_DEFAULT_FILE + " are available");
 	process.exit();
 }
 
 // check for port
-if (!config['port']) {
-	console.error('Config error: could not find port setting');
-	process.exit();
-}
-
-// check for live reload port
-if (!config['live_reload_port'] && program.liveReload) {
-	console.error('Config error: could not find live_reload_port setting');
-	process.exit();
-}
-
-// run can server
-const child_process = require("child_process");
-
-if (program.liveReload) {
-	// set the live reload port for use in the UI
-	process.env.live_reload_port = config['live_reload_port'];
-	
-	// set the config array
-	let serverOptions = [
-		"--develop", // done-ssr development mode
-
-		"--port", config['port'],
-
-		"--live-reload-port", config['live_reload_port']
-	];
-
-	if (config['proxy_host']) {
-		serverOptions.concat([
-			"--proxy", 'https://' + config['proxy_host'] + '/json',
-			"--proxy-to", "/json",
-			"--proxy-no-cert-check" //do not fail if cert is invalid
-		]);
-	}
-
-	// spawn done-serve with configs as params
-	child_process.spawn(
-		"node_modules/.bin/done-serve", serverOptions,
-		{stdio: 'inherit'}
-	);
+if (config["port"]) {
+	doneServeArgArray.push("--port", config["port"]);
 } else {
-	process.env.live_reload_port = 0;
-	let connect = require('connect');
-	let serveStatic = require('serve-static');
-	connect().use(serveStatic('./')).listen(config['port'], function() {
-		console.log("Server listening on port: %s", config['port']);						 
-	});
+	console.error("Config error: could not find port setting");
+	process.exit();
 }
+
+// check for proxy_host
+if (config["proxy_host"]) {
+	doneServeArgArray.push(
+		"--proxy", "https://" + config["proxy_host"] + "/json",
+		"--proxy-to", "/json",
+		"--proxy-no-cert-check"
+	);
+} 
+
+if (! isProduction) {
+	process.env["NODE_ENV"] = "development";	// set 'NODE_ENV' environment-variable for dev-environment
+
+	doneServeArgArray.push(
+		"--develop"
+	);
+
+	// check for live_reload_port (development-mode)
+	if (config["live_reload_port"]) {
+		process.env["live_reload_port"] = config["live_reload_port"];
+
+		doneServeArgArray.push(
+			"--live-reload-port", config["live_reload_port"]
+		);
+	} else {
+		console.error("Config error: could not find live_reload_port setting");
+		process.exit();
+	}
+}
+// run done-serve
+child_process.spawn(
+	"node_modules/.bin/done-serve",
+	doneServeArgArray,
+	{stdio: "inherit"}
+);
