@@ -58,6 +58,13 @@
 					'route': {
 						'page': "simple-form"
 					}
+				},
+				{
+					'id': "devices",
+					'label': "simple model example",
+					'route': {
+						'page': "devices"
+					}
 				}
 			])
     });
