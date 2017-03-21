@@ -1,4 +1,8 @@
+import 'steal-mocha'
 import module from './<%= name %>';
+import chai from 'chai';
+
+chai.should();
 
 describe('<%= module %>', function(){
   it('Initialized the module', function(){

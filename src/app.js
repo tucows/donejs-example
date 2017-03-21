@@ -3,6 +3,7 @@ import Map from "can/map/";
 import route from "can/route/";
 import 'can/map/define/';
 import 'can/route/pushstate/';
+import "core-js/client/core"; // fix: routing support for ie11
 
 route(':page', {page: 'home'});
 

@@ -1,4 +1,3 @@
-import 'steal-mocha';
-import chai from 'chai';
-
-chai.should(); // we want to use expect syntax
+/**
+ * This file can be used to setup things for global tests
+ **/

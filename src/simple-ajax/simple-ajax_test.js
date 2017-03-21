@@ -1,5 +1,8 @@
+import 'steal-mocha';
 import { ViewModel } from './simple-ajax';
+import chai from 'chai';
 
+chai.should();
 
 
 /*

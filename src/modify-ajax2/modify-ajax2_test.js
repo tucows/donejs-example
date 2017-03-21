@@ -1,4 +1,8 @@
+import 'steal-mocha';
 import ma2, { ViewModel } from './modify-ajax2';
+import chai from 'chai';
+
+chai.should();
  
 /*
  * Normally we would setup setup a Fixture for testing an API call

@@ -1,0 +1,13 @@
+<form ($submit)="send(%event)">
+	<div class="field">
+	<label for="name">Name</label>
+	<input type="text" {($value)}="form.name" id="name"/>
+	</div>
+	<div class="field">
+	<label for="email">Email</label>
+	<input type="text" {($value)}="form.email" id="email"/>
+	</div>
+	<div class="buttons">
+		<button type="submit">Submit</button>
+	</div>
+</form>

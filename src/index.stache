@@ -28,9 +28,19 @@
 					<modify-ajax/>
 				</can-import>
 			{{/case}}
-			{{#case 'modify-ajax2'}}
-				<can-import from="donejs-example/modify-ajax2/" can-tag="page-loader">
-					<modify-ajax-2/>
+			{{#case 'simple-form'}}
+				<can-import from="donejs-example/simple-form/" can-tag="page-loader">
+					<simple-form/>
+				</can-import>
+			{{/case}}
+			{{#case 'complex-ajax'}}
+				<can-import from="donejs-example/complex-ajax/" can-tag="page-loader">
+					<complex-ajax/>
+				</can-import>
+			{{/case}}
+			{{#case 'devices'}}
+				<can-import from="donejs-example/example-devices/" can-tag="page-loader">
+					<example-devices/>
 				</can-import>
 			{{/case}}
 		{{/switch}}
