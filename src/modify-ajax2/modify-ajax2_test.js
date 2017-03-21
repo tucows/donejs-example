@@ -1,7 +1,5 @@
 import ma2, { ViewModel } from './modify-ajax2';
  
-debugger;
-
 /*
  * Normally we would setup setup a Fixture for testing an API call
  * However, since this entire project is a mock project, this fixture is already
