@@ -65,6 +65,13 @@
 					'route': {
 						'page': "devices"
 					}
+				},
+				{
+					'id': "binding",
+					'label': "Live Binding",
+					'route': {
+						'page': "binding"
+					}
 				}
 			])
     });

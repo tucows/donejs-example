@@ -45,3 +45,7 @@ In Unix environment the production application can be started like this:
 ```
 NODE_ENV=production npm start
 ```
+
+## Debugging on the server
+
+node --inspect ./bin/dev_startup.js 

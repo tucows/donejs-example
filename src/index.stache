@@ -43,6 +43,11 @@
 					<example-devices/>
 				</can-import>
 			{{/case}}
+			{{#case 'binding'}}
+				<can-import from="donejs-example/live-binding/" can-tag="page-loader">
+					<live-binding/>
+				</can-import>
+			{{/case}}
 		{{/switch}}
 		</main>
 

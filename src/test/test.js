@@ -13,4 +13,4 @@ import 'donejs-example/simple-form/simple-form_test';
 
 import 'donejs-example/complex-ajax/complex-ajax_test';
 
-import 'donejs-example/example-devices/example-devices_test';
+import 'donejs-example/live-binding/live-binding_test';
