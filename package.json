@@ -42,7 +42,12 @@
     "map": {
       "chai": "chai/chai",
       "sinon": "sinon/pkg/sinon"
-    }
+    },
+		"envs": {
+			"server-production": {
+				"renderingBaseUrl": "https://tucows.com/"
+			}
+		}
   },
   "dependencies": {
     "bootstrap": "^3.3.6",

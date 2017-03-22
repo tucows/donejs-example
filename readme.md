@@ -49,3 +49,18 @@ NODE_ENV=production npm start
 ## Debugging on the server
 
 node --inspect ./bin/dev_startup.js 
+
+## Configure
+
+The application configuration is done via package.json
+The majority of this is within the `system` key.
+
+Most of what is in there is documented at CanJS and StealJS. Here are some exceptions:
+
+```
+  "envs": {
+      "server-production": {
+        "renderingBaseUrl": "https://tucows.com/"
+      }
+    }
+```
