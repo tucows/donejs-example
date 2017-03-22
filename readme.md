@@ -45,3 +45,20 @@ In Unix environment the production application can be started like this:
 ```
 NODE_ENV=production npm start
 ```
+
+## Configure
+
+The application configuration is done via package.json
+The majority of this is within the `system` key.
+
+Most of what is in there is documented at CanJS and StealJS. Here are some exceptions:
+
+```
+  "envs": {
+      "server-production": {
+        "renderingBaseUrl": "https://tucows.com/"
+      }
+    }
+```
+
+
