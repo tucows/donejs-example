@@ -3,6 +3,7 @@ import Map from 'can/map/';
 import 'can/map/define/';
 import './live-binding.less!';
 import template from './live-binding.stache!';
+import Devices from 'models/devices';
 
 export const ViewModel = Map.extend({
   define: {
