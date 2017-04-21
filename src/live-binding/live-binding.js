@@ -2,7 +2,7 @@ import Component from "can-component";
 import CanMap from "can-map";
 import "can-map-define";
 import './live-binding.less!';
-import template from './live-binding.stache!';
+import view from './live-binding.stache!';
 
 export const ViewModel = CanMap.extend({
   define: {

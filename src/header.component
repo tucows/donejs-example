@@ -4,19 +4,19 @@
     
     p { font-weight: bold; }
   </style>
-  <template>
+  <view>
 		<can-import from="donejs-example/nav.component"/>
 		<header>
 			<header-nav {nav}=nav/>
 		</header>
-  </template>
+  </view>
   <script type="view-model">
 		"use strict";
-    import Map from 'can/map/';
-    import List from 'can/list/';
+    import CanMap from 'can-map';
+    import CanList from 'can-list';
 
-    export default Map.extend({
-			nav: new List([
+    export default CaMap.extend({
+			nav: new CanList([
 				{
 					'id': "home",
 					'label': "Home",

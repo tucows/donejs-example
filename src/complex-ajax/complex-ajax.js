@@ -3,7 +3,7 @@ import CanMap from "can-map";
 import can from 'can/util/deferred';
 import "can-map-define";
 import './complex-ajax.less!';
-import template from './complex-ajax.stache!';
+import view from './complex-ajax.stache!';
 import fixture from "can-fixture";
 
 export const ViewModel = CanMap.extend({

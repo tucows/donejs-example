@@ -1,11 +1,11 @@
 <can-component tag="page-loader">
   <style type="less">
   </style>
-  <template>
+  <view>
     {{#eq state "resolved"}}
       <content></content>
     {{else}}
       <div class="loading">Loading...</div>
     {{/eq}}
-  </template>
+  </view>
 </can-component>

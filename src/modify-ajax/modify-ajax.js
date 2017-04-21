@@ -3,7 +3,7 @@ import Component from "can-component";
 import CanMap from "can-map";
 import "can-map-define";
 import './modify-ajax.less!';
-import template from './modify-ajax.stache!';
+import view from './modify-ajax.stache!';
 import fixture from "can-fixture";
 
 const modifyAjax = function() {

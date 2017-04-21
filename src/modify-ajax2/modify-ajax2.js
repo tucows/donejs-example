@@ -3,8 +3,8 @@ import Component from "can-component";
 import CanMap from "can-map";
 import CanList from "can-list";
 import './modify-ajax2.less!';
-import template from './modify-ajax2.stache!';
-import Fixture from 'can/util/fixture/';
+import view from './modify-ajax2.stache!';
+import fixture from "can-fixture";
 
 export const ViewModel = CanMap.extend({
 	myArray: new CanList(),
@@ -23,7 +23,7 @@ export const ViewModel = CanMap.extend({
 	}
 });
 
-Fixture("GET /api/modify-ajax2", function() {
+fixture("GET /api/modify-ajax2", function() {
 	return {
 		myArray: [1,2,3,4,5]
 	}

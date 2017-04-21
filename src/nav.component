@@ -4,13 +4,13 @@
     
     p { font-weight: bold; }
   </style>
-  <template>
+  <view>
 		<nav>
 			{{#each nav}}
 				<a id="{{id}}" href="{{routeUrl page=route.page}}">{{label}}</a>
 			{{/each}}
 		</nav>
-  </template>
+  </view>
 	<script type="events">
 		"use strict";
     export default {
