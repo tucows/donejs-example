@@ -3,6 +3,7 @@ import CanMap from "can-map";
 import "can-map-define";
 import './live-binding.less!';
 import view from './live-binding.stache!';
+import Devices from '../models/devices';
 
 export const ViewModel = CanMap.extend({
   define: {

@@ -33,38 +33,39 @@
       "node_modules/can-zone/register"
     ],
     "npmAlgorithm": "flat",
-		"meta": {
-			"core-js/client/core": {
-				"format": "amd"
-			}
-		},
+    "meta": {
+      "core-js/client/core": {
+        "format": "amd"
+      }
+    },
     "transpiler": "babel",
     "map": {
       "chai": "chai/chai",
       "sinon": "sinon/pkg/sinon"
     },
-		"plugins": [
-			"done-css",
-			"done-component",
-			"steal-less",
-			"steal-stache"
-		]
+    "plugins": [
+      "done-css",
+      "done-component",
+      "steal-less",
+      "steal-stache"
+    ]
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-		"can": "^3.5.1",
+    "can": "^3.5.1",
     "can-connect": "^1.0.0",
     "can-zone": "^0.6.0",
     "done-autorender": "^1.0.0",
     "done-component": "^1.0.0",
     "done-css": "^3.0.0",
     "done-serve": "^0.2.0",
-		"steal-less": "^1.2.0",
-		"steal-stache": "^3.0.5",
+    "done-ssr": "1.0.0",
     "generator-donejs": "^0.9.0",
     "jquery": "~2.2.1",
     "jqueryui": "^1.11.1",
-    "steal": "^0.16.33"
+    "steal": "^0.16.33",
+    "steal-less": "^1.2.0",
+    "steal-stache": "^3.0.5"
   },
   "devDependencies": {
     "can-fixture": "^1.0.0",
