@@ -2,7 +2,7 @@ import can from 'can';
 import superMap from 'can-connect/can/super-map/';
 import tag from 'can-connect/can/tag/';
 import 'can/map/define/define';
-import 'models/fixtures/devices';
+import './fixtures/devices';
 
 export const Devices = can.Map.extend({
   define: {}

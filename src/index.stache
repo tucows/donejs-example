@@ -38,11 +38,6 @@
 					<complex-ajax/>
 				</can-import>
 			{{/case}}
-			{{#case 'devices'}}
-				<can-import from="donejs-example/example-devices/" can-tag="page-loader">
-					<example-devices/>
-				</can-import>
-			{{/case}}
 			{{#case 'binding'}}
 				<can-import from="donejs-example/live-binding/" can-tag="page-loader">
 					<live-binding/>
