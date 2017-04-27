@@ -47,7 +47,13 @@
       "done-component",
       "steal-less",
       "steal-stache"
-    ]
+    ],
+    "envs": {
+      "server-production": {
+        "renderingBaseURL": "/dist"
+      }
+    },
+    "serviceBaseURL": ""
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -58,7 +64,7 @@
     "done-component": "^1.0.0",
     "done-css": "^3.0.0",
     "done-serve": "^0.2.0",
-    "generator-donejs": "^0.9.0",
+    "generator-donejs": "^1.0.0",
     "jquery": "~2.2.1",
     "jqueryui": "^1.11.1",
     "steal": "^1.5.0",
@@ -66,7 +72,7 @@
     "steal-stache": "^3.0.5"
   },
   "devDependencies": {
-    "can-fixture": "^1.0.0",
+    "can-fixture": "^1.0.13",
     "chai": "^3.5.0",
     "commander": "^2.9.0",
     "connect": "^3.4.1",
