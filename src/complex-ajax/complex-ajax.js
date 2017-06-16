@@ -1,6 +1,5 @@
 import Component from "can-component";
 import CanMap from "can-map";
-import can from 'can/util/deferred';
 import "can-map-define";
 import './complex-ajax.less!';
 import view from './complex-ajax.stache!';
@@ -10,7 +9,7 @@ export const ViewModel = CanMap.extend({
   define: {
     stuff: {
 			value() {
-				var def = can.Deferred();
+				var def = 
 				var response = [];
 				var counter = 2;
 					ajax("/api/complex-ajax1").then(

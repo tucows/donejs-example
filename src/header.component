@@ -15,7 +15,7 @@
     import CanMap from 'can-map';
     import CanList from 'can-list';
 
-    export default CaMap.extend({
+    export default CanMap.extend({
 			nav: new CanList([
 				{
 					'id': "home",
