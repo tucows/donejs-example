@@ -22,7 +22,7 @@
     "build": "node build --production",
     "build_dev": "node build --development"
   },
-  "main": "donejs-example/index.stache!done-autorender",
+  "main": "production.html",
   "files": [
     "src"
   ],
@@ -55,19 +55,34 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "can": "^3.5.1",
+    "can-component": "^3.0.7",
     "can-connect": "^1.0.0",
+    "can-define": "^1.0.17",
+    "can-list": "^3.0.3",
+    "can-map": "^3.0.7",
+    "can-map-define": "^3.0.6",
+    "can-model": "^3.0.0",
+    "can-route": "^3.0.11",
+    "can-route-pushstate": "^3.0.3",
+    "can-set": "^1.2.0",
+    "can-stache": "^3.0.21",
+    "can-util": "^3.4.1",
+    "can-view-autorender": "^3.0.4",
     "can-zone": "^0.6.0",
     "done-autorender": "^1.0.0",
     "done-component": "^1.0.0",
     "done-css": "^3.0.0",
     "done-serve": "^0.2.0",
+    "done-ssr": "^1.0.7",
+    "done-ssr-middleware": "^1.0.0",
     "generator-donejs": "^1.0.0",
     "jquery": "~2.2.1",
     "jqueryui": "^1.11.1",
     "steal": "^1.5.0",
+    "steal-css": "^1.2.2",
     "steal-less": "^1.2.0",
-    "steal-stache": "^3.0.5"
+    "steal-stache": "^3.0.5",
+    "steal-platform": "0.0.4"
   },
   "devDependencies": {
     "donejs-cli": "^1.0.0",
