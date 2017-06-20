@@ -1,21 +1,18 @@
 "use strict";
-import CanMap from "can-map";
-import route from "can-route";
-import "can-map-define";
-import "can-route-pushstate";
+import DefineMap from 'can-define/map/';
+import route from 'can-route';
+import 'can-route-pushstate';
 
 route(':page', {page: 'home'});
 
-const AppViewModel = CanMap.extend({
-  define: {
-    message: {
-      value: 'Hello World!',
-      serialize: false
-    },
-    title: {
-      value: 'donejs-example',
-      serialize: false
-    }
+const AppViewModel = DefineMap.extend({seal: false}, {
+  message: {
+    value: 'Hello World!',
+    serialize: false
+  },
+  title: {
+    value: 'donejs-example',
+    serialize: false
   }
 });
 
