@@ -2,6 +2,7 @@
 import DefineMap from 'can-define/map/';
 import route from 'can-route';
 import 'can-route-pushstate';
+import 'can-stache/helpers/route';
 
 route(':page', {page: 'home'});
 

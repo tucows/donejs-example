@@ -1,13 +1,15 @@
 import superMap from 'can-connect/can/super-map/';
 import tag from 'can-connect/can/tag/';
+import CanMap from "can-map";
+import CanList from 'can-list';
 import 'can-define';
 import './fixtures/devices';
 
-export const Devices = can.Map.extend({
+export const Devices = CanMap.extend({
   define: {}
 });
 
-Devices.List = can.List.extend({
+Devices.List = CanList.extend({
   Map: Devices
 }, {});
 
