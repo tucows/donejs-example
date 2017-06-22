@@ -16,7 +16,7 @@
   "scripts": {
     "test": "testee test.html --browsers firefox --reporter Spec",
     "start": "done-serve --port 8080",
-    "develop": "done-serve --develop --port 8080",
+    "develop": "./bin/dev_startup.js --development",
     "build": "node build"
   },
   "main": "donejs-example/index.stache!done-autorender",
@@ -84,6 +84,7 @@
     "documentjs": "^0.4.2",
     "donejs-cli": "^1.0.0",
     "donejs-mocha": "^0.1.0",
+    "less": "^2.7.2",
     "sinon": "^1.17.6",
     "steal-mocha": "0.0.3",
     "steal-tools": "^1.2.0",

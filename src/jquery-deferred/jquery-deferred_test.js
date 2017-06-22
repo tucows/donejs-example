@@ -1,5 +1,5 @@
 import 'steal-mocha';
-import { ViewModel} from './jquery-deferred';
+import { ViewModel } from './jquery-deferred';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
