@@ -72,6 +72,20 @@
 					'route': {
 						'page': "binding"
 					}
+				},
+				{
+					'id': "promises",
+					'label': "ES2015 Promises",
+					'route': {
+						'page': "promises"
+					}
+				},
+				{
+					'id': "deferred",
+					'label': "jQuery Deferreds",
+					'route': {
+						'page': "deferred"
+					}
 				}
 			])
     });

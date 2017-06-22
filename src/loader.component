@@ -1,11 +1,11 @@
-<can-component tag="page-loader">
+<can-component tag="page-loader" leak-scope>
   <style type="less">
   </style>
   <view>
-    {{#eq state "resolved"}}
+		{{#isResolved}}
       <content></content>
     {{else}}
       <div class="loading">Loading...</div>
-    {{/eq}}
+    {{/isResolved}}
   </view>
 </can-component>

@@ -4,7 +4,7 @@ import route from 'can-route';
 import 'can-route-pushstate';
 import 'can-stache/helpers/route';
 
-route(':page', {page: 'home'});
+route('{page}', {page: 'home'});
 
 const AppViewModel = DefineMap.extend({seal: false}, {
   message: {
