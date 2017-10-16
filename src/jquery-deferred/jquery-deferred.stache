@@ -1,1 +1,1 @@
-<p>{{message.value}}</p>
+<p>{{message}}</p>

@@ -5,8 +5,19 @@ import view from './es2015-promise.stache';
 
 export const ViewModel = DefineMap.extend({
   message: {
-    value: 'This is the es2015-promise component'
-  }
+		get(previousValue, resolve) {
+			this.messagePromise.then(resolve); // def could be any function call that returns a promise
+		}
+  },
+	messagePromise: {
+		get() {
+			return new Promise((resolve, reject) => {
+				// contrived example of an async deferred response
+				setTimeout(()=>{resolve("This is my late response")}, 100);
+			});
+			
+		}
+	}
 });
 
 export default Component.extend({

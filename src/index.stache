@@ -43,6 +43,11 @@
 					<live-binding/>
 				</can-import>
 			{{/case}}
+			{{#case 'promises'}}
+				<can-import from="donejs-example/es2015-promise/" can-tag="page-loader">
+					<es2015-promise/>
+				</can-import>
+			{{/case}}
 			{{#case 'deferred'}}
 				<can-import from="donejs-example/jquery-deferred/" can-tag="page-loader">
 					<jquery-deferred/>

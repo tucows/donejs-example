@@ -7,7 +7,7 @@
   <view>
 		<can-import from="donejs-example/nav.component"/>
 		<header>
-			<header-nav {nav}=nav/>
+			<header-nav nav:from="nav"}/>
 		</header>
   </view>
   <script type="view-model">
