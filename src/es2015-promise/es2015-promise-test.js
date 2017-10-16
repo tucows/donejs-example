@@ -1,10 +1,14 @@
 import QUnit from 'steal-qunit';
 import { ViewModel } from './es2015-promise';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 
-// ViewModel unit tests
-QUnit.module('donejs-example/es2015-promise');
+chai.should();
+chai.use(chaiAsPromised);
 
-QUnit.test('Has message', function(){
-  var vm = new ViewModel();
-  QUnit.equal(vm.message, 'This is the es2015-promise component');
+describe("messege getter", function() {
+	const vm = new ViewModel();
+	it('should return an async message', function() {
+		return vm.message.should.eventually.equal("The simple ajax call returned this.");
+	})
 });

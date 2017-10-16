@@ -9,7 +9,7 @@ chai.use(chaiAsPromised);
 describe("messege getter", function() {
 	const vm = new ViewModel();
 	it('should return an async message', function() {
-		return vm.message.value.should.eventually.equal("The simple ajax call returned this.");
+		return vm.message.should.eventually.equal("The simple ajax call returned this.");
 	})
 });
 
