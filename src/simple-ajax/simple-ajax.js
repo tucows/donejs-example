@@ -1,25 +1,26 @@
 "use strict";
 import Component from "can-component";
-import CanMap from "can-map";
-import "can-map-define";
+import DefineMap from "can-define/map/map";
 import './simple-ajax.less!';
 import view from './simple-ajax.stache!';
 import fixture from "can-fixture";
+import $ from 'jquery';
 
-export const ViewModel = CanMap.extend({
-  define: {
-    stuff: {
-			value() {
-				return ajax("/api/simple-ajax");
-			}
-    }
-  }
+export const ViewModel = DefineMap.extend({
+	messagePromise: {
+		get() {
+			return $.ajax("/api/simple-ajax");
+		}
+	},
+	message: {
+		get(lastValue, resolve) {
+			this.messagePromise.then(resolve);
+		}
+	}
 });
 
 fixture("GET /api/simple-ajax", function() {
-	return {
-		message: "The simple ajax call returned this."
-	}
+	return "The simple ajax call returned this.";
 });
 
 export default Component.extend({

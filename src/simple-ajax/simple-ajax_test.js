@@ -1,7 +1,9 @@
 import 'steal-mocha';
 import { ViewModel } from './simple-ajax';
 import chai from 'chai';
+import chaiAsPromised from "chai-as-promised";
 
+chai.use(chaiAsPromised);
 chai.should();
 
 
@@ -12,22 +14,23 @@ chai.should();
 import Fixture from 'can/util/fixture/';
  
 Fixture("GET /api/simple-ajax", function() {
-  return {
-    message: "The simple ajax call returned this."
-  }
+  return "The simple ajax call returned this.";
 });
 
  **/
 
 describe('donejs-example/simple-ajax component', function(){
-	it('should return ajax response', function(done){
-		var vm = new ViewModel();
-		// return vm.attr('stuff').should.eventually.equal("The simple ajax call returned this.");
-		return vm.attr('stuff').then(
-			function(response) {
-				response.message.should.equal("The simple ajax call returned this.");
-				done();
-			}, done)
+	var vm;
+	beforeEach((done) => {
+		vm = new ViewModel();
+		vm.on('message', () => done());// trigger message so that it's not undefined
+	});
+
+	it('should return the expected message promise', function(){
+		return vm.get('messagePromise').should.eventually.equal("The simple ajax call returned this.");
+	});
+	it('should return the expected message', function(){
+		return vm.get('message').should.equal("The simple ajax call returned this.");
 	});
 });
 
