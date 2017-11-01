@@ -1,6 +1,6 @@
 {{#messagePromise.isResolved}}
 <p>
-	Original Message: {{message}}
+	Original Message: {{message.message}}
 </p>
 <p>
 	Modified Message: {{modMessage}}

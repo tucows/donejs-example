@@ -4,13 +4,15 @@ import DefineMap from "can-define/map/map";
 import './simple-ajax.less!';
 import view from './simple-ajax.stache!';
 import fixture from "can-fixture";
-import $ from 'jquery';
+import ajax from 'can-ajax';
 
 export const ViewModel = DefineMap.extend({
 	// have the async request as one prop of the viewModel
 	messagePromise: {
 		get() {
-			return $.ajax("/api/simple-ajax");
+			return ajax({
+				url: "/api/simple-ajax"
+			});
 		}
 	},
 	// store the response in another prop for easy access
@@ -23,7 +25,7 @@ export const ViewModel = DefineMap.extend({
 	modMessage: {
 		get(lastValue, resolve) {
 			this.messagePromise.then((response)=>{
-				resolve(response + " And we modified the response.");
+				resolve(response.message + " And we modified the response.");
 			}, resolve);
 		}
 	},
@@ -31,7 +33,9 @@ export const ViewModel = DefineMap.extend({
 
 // we use a fake API endpoint to simulate this ajax call using can-fixture
 fixture("GET /api/simple-ajax", function() {
-	return "The simple ajax call returned this.";
+	return {
+		message: "The simple ajax call returned this."
+	};
 });
 
 export default Component.extend({
