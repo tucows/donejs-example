@@ -23,7 +23,8 @@ describe('donejs-example/simple-ajax component', function(){
 	var vm;
 	beforeEach((done) => {
 		vm = new ViewModel();
-		vm.on('message', () => done());// trigger message so that it's not undefined
+		vm.on('message', () => {}); // we can only call done once, but we still need this bound
+		vm.on('modMessage', () => done());// bind message so that it's not undefined. done called on the last bind
 	});
 
 	it('should return the expected message promise', function(){
@@ -31,6 +32,9 @@ describe('donejs-example/simple-ajax component', function(){
 	});
 	it('should return the expected message', function(){
 		return vm.get('message').should.equal("The simple ajax call returned this.");
+	});
+	it('should return the expected modified message', function(){
+		return vm.get('modMessage').should.equal("The simple ajax call returned this. And we modified the response.");
 	});
 });
 

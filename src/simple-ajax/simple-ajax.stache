@@ -1,3 +1,10 @@
+{{#messagePromise.isResolved}}
 <p>
-	{{message}}
+	Original Message: {{message}}
 </p>
+<p>
+	Modified Message: {{modMessage}}
+</p>
+{{else}}
+<p>Loading</p>
+{{/messagePromise.isResvoled}}
