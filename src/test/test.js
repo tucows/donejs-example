@@ -1,7 +1,8 @@
 import 'donejs-example/test/setup';
-import 'donejs-example/models/test';
-import 'donejs-example/test/functional';
+//import 'donejs-example/test/functional';
 
+
+import 'donejs-example/models/devices_test';
 
 import 'donejs-example/simple-ajax/simple-ajax_test';
 

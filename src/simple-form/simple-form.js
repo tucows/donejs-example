@@ -2,7 +2,7 @@ import Component from "can-component";
 import CanMap from "can-map";
 import "can-map-define";
 import './simple-form.less!';
-import template from './simple-form.stache!';
+import view from './simple-form.stache!';
 
 export const ViewModel = CanMap.extend({
 	form: {}, //empty form
