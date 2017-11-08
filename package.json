@@ -14,7 +14,7 @@
   },
   "private": true,
   "scripts": {
-    "test": "testee test.html --browsers firefox --reporter Spec",
+		"test": "DEBUG='testee:*' testee ./src/test.html -c ./config/testee.json",
     "start": "done-serve --port 8080",
     "develop": "./bin/dev_startup.js --development",
     "build": "node build"
