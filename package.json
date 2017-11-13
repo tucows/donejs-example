@@ -79,6 +79,7 @@
     "steal-stache": "^3.1.2"
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.2",
     "can-fixture": "^1.1.1",
     "chai": "^3.5.0",
     "chai-as-promised": "^7.1.1",
@@ -87,6 +88,9 @@
     "donejs-cli": "^1.0.2",
     "donejs-mocha": "^0.1.0",
     "eslint": "^4.11.0",
+    "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-promise": "^3.6.0",
     "less": "^2.7.2",
     "sinon": "^1.17.6",
     "steal-mocha": "0.0.3",
