@@ -1,6 +1,6 @@
-import Component from "can-component";
-import CanMap from "can-map";
-import "can-map-define";
+import Component from 'can-component';
+import CanMap from 'can-map';
+import 'can-map-define';
 import './simple-form.less!';
 import view from './simple-form.stache!';
 
@@ -14,7 +14,7 @@ export const ViewModel = CanMap.extend({
 });
 
 export default Component.extend({
-  tag: 'simple-form',
-  viewModel: ViewModel,
+	tag: 'simple-form',
+	viewModel: ViewModel,
 	view
 });

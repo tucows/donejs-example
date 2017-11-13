@@ -1,7 +1,7 @@
 import 'steal-mocha';
 import { ViewModel } from './simple-ajax';
 import chai from 'chai';
-import chaiAsPromised from "chai-as-promised";
+import chaiAsPromised from 'chai-as-promised';
 
 chai.use(chaiAsPromised);
 chai.should();
@@ -28,13 +28,13 @@ describe('donejs-example/simple-ajax component', function(){
 	});
 
 	it('should return the expected message promise', function(){
-		return vm.get('messagePromise').should.eventually.deep.equal({"message": "The simple ajax call returned this."});
+		return vm.get('messagePromise').should.eventually.deep.equal({'message': 'The simple ajax call returned this.'});
 	});
 	it('should return the expected message', function(){
-		return vm.get('message').should.deep.equal({"message": "The simple ajax call returned this."});
+		return vm.get('message').should.deep.equal({'message': 'The simple ajax call returned this.'});
 	});
 	it('should return the expected modified message', function(){
-		return vm.get('modMessage').should.equal("The simple ajax call returned this. And we modified the response.");
+		return vm.get('modMessage').should.equal('The simple ajax call returned this. And we modified the response.');
 	});
 });
 

@@ -1,9 +1,9 @@
-"use strict";
-import Component from "can-component";
-import DefineMap from "can-define/map/map";
+'use strict';
+import Component from 'can-component';
+import DefineMap from 'can-define/map/map';
 import './simple-ajax.less!';
 import view from './simple-ajax.stache!';
-import fixture from "can-fixture";
+import fixture from 'can-fixture';
 import ajax from 'can-ajax';
 
 export const ViewModel = DefineMap.extend({
@@ -11,7 +11,7 @@ export const ViewModel = DefineMap.extend({
 	messagePromise: {
 		get() {
 			return ajax({
-				url: "/api/simple-ajax"
+				url: '/api/simple-ajax'
 			});
 		}
 	},
@@ -25,21 +25,21 @@ export const ViewModel = DefineMap.extend({
 	modMessage: {
 		get(lastValue, resolve) {
 			this.messagePromise.then((response)=>{
-				resolve(response.message + " And we modified the response.");
+				resolve(response.message + ' And we modified the response.');
 			}, resolve);
 		}
 	},
 });
 
 // we use a fake API endpoint to simulate this ajax call using can-fixture
-fixture("GET /api/simple-ajax", function() {
+fixture('GET /api/simple-ajax', function() {
 	return {
-		message: "The simple ajax call returned this."
+		message: 'The simple ajax call returned this.'
 	};
 });
 
 export default Component.extend({
-  tag: 'simple-ajax',
-  viewModel: ViewModel,
-  view
+	tag: 'simple-ajax',
+	viewModel: ViewModel,
+	view
 });

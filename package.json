@@ -14,10 +14,11 @@
   },
   "private": true,
   "scripts": {
-		"test": "DEBUG='testee:*' testee ./src/test.html -c ./config/testee.json",
+    "test": "DEBUG='testee:*' testee ./src/test.html -c ./config/testee.json",
     "start": "done-serve --port 8080",
     "develop": "./bin/dev_startup.js --development",
-    "build": "node build"
+    "build": "node build",
+    "lint": "npx eslint src/**/*.js --fix"
   },
   "main": "donejs-example/index.stache!done-autorender",
   "files": [
@@ -85,6 +86,7 @@
     "documentjs": "^0.4.2",
     "donejs-cli": "^1.0.2",
     "donejs-mocha": "^0.1.0",
+    "eslint": "^4.11.0",
     "less": "^2.7.2",
     "sinon": "^1.17.6",
     "steal-mocha": "0.0.3",

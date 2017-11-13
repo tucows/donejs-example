@@ -1,24 +1,24 @@
 import superMap from 'can-connect/can/super-map/';
 import tag from 'can-connect/can/tag/';
-import CanMap from "can-map";
+import CanMap from 'can-map';
 import CanList from 'can-list';
 import 'can-define';
 import './fixtures/devices';
 
 export const Devices = CanMap.extend({
-  define: {}
+	define: {}
 });
 
 Devices.List = CanList.extend({
-  Map: Devices
+	Map: Devices
 }, {});
 
 export const devicesConnection = superMap({
-  url: '/devices',
-  idProp: 'id',
-  Map: Devices,
-  List: Devices.List,
-  name: 'devices'
+	url: '/devices',
+	idProp: 'id',
+	Map: Devices,
+	List: Devices.List,
+	name: 'devices'
 });
 
 tag('devices-model', devicesConnection);
