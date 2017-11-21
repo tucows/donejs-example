@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
+/* eslint no-console: ["error", { allow: ["warn", "error", "log"] }] */
+
 /**
  * get command line params
  */

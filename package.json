@@ -86,7 +86,7 @@
     "documentjs": "^0.4.2",
     "donejs-cli": "^1.0.2",
     "donejs-mocha": "^0.1.0",
-    "eslint-config-tucows": "^1.0.0",
+    "eslint-config-tucows": "^1.0.4",
     "less": "^2.7.2",
     "sinon": "^1.17.6",
     "steal-mocha": "0.0.3",
