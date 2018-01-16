@@ -11,12 +11,9 @@
 		</header>
   </view>
   <script type="view-model">
-		"use strict";
-    import CanMap from 'can-map';
-    import CanList from 'can-list';
+		import DefineMap from 'can-define/map/map';
 
-    export default CanMap.extend({
-			nav: new CanList([
+		let navs = [
 				{
 					'id': "home",
 					'label': "Home",
@@ -72,8 +69,23 @@
 					'route': {
 						'page': "deferred"
 					}
+				},
+				{
+					'id': "document-scroll",
+					'label': "Document and Window Events",
+					'route': {
+						'page': "document-scroll"
+					}
 				}
-			])
+			];
+
+
+		export default DefineMap.extend({
+			nav: {
+				value() {
+					return navs
+				}
+			}
     });
   </script>
 </can-component>

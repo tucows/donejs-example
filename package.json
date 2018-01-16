@@ -18,7 +18,8 @@
     "start": "done-serve --port 8080",
     "develop": "./bin/dev_startup.js --development",
     "build": "node build",
-    "lint": "npx eslint src/**/*.js --fix"
+    "lint": "npx eslint src/**/*.js --fix",
+		"dev-bundle": "steal-tools bundle --dev"
   },
   "main": "donejs-example/index.stache!done-autorender",
   "files": [

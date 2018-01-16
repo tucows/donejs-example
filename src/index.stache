@@ -43,6 +43,11 @@
 					<jquery-deferred/>
 				</can-import>
 			{{/case}}
+			{{#case 'document-scroll'}}
+				<can-import from="donejs-example/document-scroll/" can-tag="page-loader">
+					<document-scroll/>
+				</can-import>
+			{{/case}}
 		{{/switch}}
 		</main>
 
@@ -51,7 +56,7 @@
         <script src="{{joinBase 'steal.production.js'}}"></script>
       {{/case}}
       {{#default}}
-        <script src="/node_modules/steal/steal.js"></script>
+        <script src="/node_modules/steal/steal.js" dev-bundle></script>
       {{/default}}
     {{/switch}}
   </body>

@@ -11,8 +11,15 @@
 			{{/each}}
 		</nav>
   </view>
+  <script type="view-model">
+		import DefineMap from 'can-define/map/map';
+
+		export default DefineMap.extend({
+			nav: "observable"
+		});
+
+	</script>
 	<script type="events">
-		"use strict";
     export default {
 			"nav div click": function (el, ev) {
 				console.log(el, ev);
