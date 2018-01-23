@@ -52,7 +52,11 @@
         "renderingBaseURL": "/dist"
       }
     },
-    "serviceBaseURL": ""
+    "serviceBaseURL": "",
+		"bundle": [
+			"donejs-example/simple-ajax/",
+			"donejs-example/document-scroll/"
+		]
   },
   "dependencies": {
     "bootstrap": "^3.3.7",

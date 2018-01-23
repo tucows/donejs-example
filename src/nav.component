@@ -1,8 +1,14 @@
 <can-component tag="header-nav">
   <style type="less">
     display: block;
+		overflow: auto;
     
-    p { font-weight: bold; }
+		a {
+			border: 1px solid blue;
+			border-radius: 3px;
+			float: left;
+			padding: 0.5em
+		}
   </style>
   <view>
 		<nav>
